@@ -9,9 +9,15 @@ class Coverage extends Model
     protected $table = 'coverage';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'nama', 'periode_awal', 'periode_akhir', 'kendaraan', 
-        'harga', 'jenis', 'risiko', 'total_premi'
+        'nama', 'periode_awal', 'periode_akhir', 'pertanggungan', 
+        'harga_pertanggungan', 'jenis_pertanggungan', 'risiko_pertanggungan'
     ];
+
+    public function saveAssurance($data)
+    {
+        $builder = $this->db->table($this->table);
+        return $builder->insert($data);
+    }
 
     public function hitungPremi($harga, $tahun, $jenis, $risiko)
     {
