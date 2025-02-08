@@ -123,11 +123,17 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             url: "/assurance/save",
+            headers: {
+                "X-CSRF-TOKEN": csrfToken
+            },
             data: $.param(formData),
             success: function(response) {
                 Swal.fire("Success!", "Data berhasil diperbarui", "success");
                 $("#modalEdit").modal("hide");
                 loadRiwayat();
+                getCsrfToken();
+            },error: function(xhr) {
+                Swal.fire("Error!", "Gagal menyimpan data", "error");
             }
         });
     });
@@ -147,9 +153,14 @@ $(document).ready(function() {
                 $.ajax({
                     type: "DELETE",
                     url: "/assurance/delete/" + id,
+                    headers: {
+                        "X-CSRF-TOKEN": csrfToken
+                    },
                     success: function() {
                         Swal.fire("Deleted!", "Data berhasil dihapus.", "success");
                         loadRiwayat();
+                    },error: function(xhr) {
+                        Swal.fire("Error!", "Gagal menyimpan data", "error");
                     }
                 });
             }

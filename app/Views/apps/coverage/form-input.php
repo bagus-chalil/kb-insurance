@@ -103,6 +103,9 @@ $(document).ready(function() {
                 $("#formPertanggungan")[0].reset();
                 $("#id").val("");
                 getCsrfToken();
+            },
+            error: function(xhr) {
+                Swal.fire("Error!", "Gagal menyimpan data", "error");
             }
         });
     });
