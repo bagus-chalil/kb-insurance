@@ -12,8 +12,7 @@ Printout Pertanggungan
         <!-- Header Perusahaan -->
         <div class="text-center mb-4">
             <img src="/assets/img/logo/KB_Insurance_logo.png" alt="Logo Perusahaan" style="max-width: 75%;">
-            <h4 class="mt-2">PT. Asuransi Sejahtera</h4>
-            <p>Sahid Sudirman Centre, Jl. Jenderal Sudirman, Jakarta, Indonesia</p>
+            <p class="mt-2">Sahid Sudirman Centre, Jl. Jenderal Sudirman, Jakarta, Indonesia</p>
         </div>
 
         <!-- Tombol Print dan Back (Tidak Akan Tercetak) -->
@@ -96,9 +95,14 @@ Printout Pertanggungan
                         <td>Rp. <?= number_format($vehicle_premi, 2, ',', '.') ?></td>
                     </tr>
                     <tr>
-                        <td><strong>Premi Risiko Pertanggungan</strong></td>
+                        <td><strong>Banjir</strong></td>
                         <td>:</td>
-                        <td>Rp. <?= number_format($risk_premi_coverage, 2, ',', '.') ?></td>
+                        <td>Rp. <?= number_format($banjir, 2, ',', '.') ?></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gempa</strong></td>
+                        <td>:</td>
+                        <td>Rp. <?= number_format($gempa, 2, ',', '.') ?></td>
                     </tr>
                     <tr>
                         <td><strong>Total Premi</strong></td>

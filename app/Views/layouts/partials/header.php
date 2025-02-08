@@ -8,33 +8,8 @@
     </div>
 
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-        <!-- Search -->
-        <div class="navbar-nav align-items-center">
-        <div class="nav-item d-flex align-items-center">
-            <i class="bx bx-search bx-md"></i>
-            <input
-            type="text"
-            class="form-control border-0 shadow-none ps-1 ps-sm-2"
-            placeholder="Search..."
-            aria-label="Search..." />
-        </div>
-        </div>
-        <!-- /Search -->
 
         <ul class="navbar-nav flex-row align-items-center ms-auto">
-        <!-- Place this tag where you want the button to render. -->
-        <li class="nav-item lh-1 me-4">
-            <a
-            class="github-button"
-            href="https://github.com/themeselection/sneat-html-admin-template-free"
-            data-icon="octicon-star"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-            >Star</a
-            >
-        </li>
-
         <!-- User -->
         <li class="nav-item navbar-dropdown dropdown-user dropdown">
             <a
@@ -67,18 +42,6 @@
             <li>
                 <a class="dropdown-item" href="#">
                 <i class="bx bx-user bx-md me-3"></i><span>My Profile</span>
-                </a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="#"> <i class="bx bx-cog bx-md me-3"></i><span>Settings</span> </a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="#">
-                <span class="d-flex align-items-center align-middle">
-                    <i class="flex-shrink-0 bx bx-credit-card bx-md me-3"></i
-                    ><span class="flex-grow-1 align-middle">Billing Plan</span>
-                    <span class="flex-shrink-0 badge rounded-pill bg-danger">4</span>
-                </span>
                 </a>
             </li>
             <li>

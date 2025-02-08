@@ -69,9 +69,9 @@
         <span class="badge rounded-pill bg-danger ms-auto">5</span>
         </a>
         <ul class="menu-sub">
-        <li class="menu-item active">
-            <a href="index.html" class="menu-link">
-            <div class="text-truncate" data-i18n="Analytics">Analytics</div>
+        <li class="menu-item">
+            <a href="<?= base_url('dashboard')?>" class="menu-link">
+            <div class="text-truncate" data-i18n="Home">Home</div>
             </a>
         </li>
         </ul>
@@ -81,61 +81,24 @@
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-layout"></i>
-        <div class="text-truncate" data-i18n="Layouts">Assurance</div>
+        <div class="text-truncate" data-i18n="Assurance">Assurance</div>
         </a>
 
         <ul class="menu-sub">
         <li class="menu-item">
-            <a href="<?= base_url('assurance/')?>" class="menu-link">
-            <div class="text-truncate" data-i18n="Without menu">Create</div>
+            <a href="<?= base_url('assurance/form')?>" class="menu-link">
+            <div class="text-truncate" data-i18n="Form">Form</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="<?= base_url('assurance/list')?>" class="menu-link">
+            <div class="text-truncate" data-i18n="List">List</div>
             </a>
         </li>
         </ul>
     </li>
 
-    <!-- Forms & Tables -->
-    <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
     
-    <!-- Form Validation -->
-    <li class="menu-item">
-        <a
-        href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/form-validation.html"
-        target="_blank"
-        class="menu-link">
-        <i class="menu-icon tf-icons bx bx-list-check"></i>
-        <div class="text-truncate" data-i18n="Form Validation">Form Validation</div>
-        <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
-        </a>
-    </li>
-    <!-- Tables -->
-    <li class="menu-item">
-        <a href="tables-basic.html" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-table"></i>
-        <div class="text-truncate" data-i18n="Tables">Tables</div>
-        </a>
-    </li>
-    <!-- Data Tables -->
-    <li class="menu-item">
-        <a
-        href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/tables-datatables-basic.html"
-        target="_blank"
-        class="menu-link">
-        <i class="menu-icon tf-icons bx bx-grid"></i>
-        <div class="text-truncate" data-i18n="Datatables">Datatables</div>
-        <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
-        </a>
-    </li>
-    <!-- Misc -->
-    <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
-    <li class="menu-item">
-        <a
-        href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-        target="_blank"
-        class="menu-link">
-        <i class="menu-icon tf-icons bx bx-support"></i>
-        <div class="text-truncate" data-i18n="Support">Support</div>
-        </a>
-    </li>
     <li class="menu-item">
         <a
         href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"

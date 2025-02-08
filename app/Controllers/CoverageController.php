@@ -16,9 +16,13 @@ class CoverageController extends ResourceController
         $this->coverageModel = new Coverage();
     }
 
-    public function index()
+    public function form()
     {
-        return view('apps/coverage/create');
+        return view('apps/coverage/form-input');
+    }
+    public function list()
+    {
+        return view('apps/coverage/list');
     }
 
     public function simpan()
@@ -96,24 +100,26 @@ class CoverageController extends ResourceController
             $vehicle_premi = $coverage_periode * $assuranceData['harga_pertanggungan'] * $rate_jenis;
 
             // Premi Risiko Pertanggungan
-            $risk_premi_coverage = 0;
+            $banjir = 0;
+            $gempa = 0;
             if ($assuranceData['jenis_pertanggungan'] == 1) {
                 if ($assuranceData['banjir'] === 'TRUE') {
-                    $risk_premi_coverage += $coverage_periode * $assuranceData['harga_pertanggungan'] * 0.0005;
+                    $banjir = $coverage_periode * $assuranceData['harga_pertanggungan'] * 0.0005;
                 }
                 if ($assuranceData['gempa'] === 'TRUE') {
-                    $risk_premi_coverage += $coverage_periode * $assuranceData['harga_pertanggungan'] * 0.0002;
+                    $gempa = $coverage_periode * $assuranceData['harga_pertanggungan'] * 0.0002;
                 }
             }
 
             // Total Premi
-            $total_premi = $vehicle_premi + $risk_premi_coverage;
+            $total_premi = $vehicle_premi + $banjir + $gempa;
 
             return view('apps/coverage/premi', [
                 'data' => $assuranceData,
                 'coverage_periode' => $coverage_periode,
                 'vehicle_premi' => $vehicle_premi,
-                'risk_premi_coverage' => $risk_premi_coverage,
+                'banjir' => $banjir,
+                'gempa' => $gempa,
                 'total_premi' => $total_premi
             ]);
         } catch (Exception $e) {
