@@ -36,6 +36,9 @@ $routes->get('/', 'Home::index');
 $routes->get('/assurance/', 'CoverageController::index');
 $routes->post('/assurance/save', 'CoverageController::simpan');
 $routes->get('/assurance/history', 'CoverageController::riwayat');
+$routes->get('/assurance/premi/(:num)', 'CoverageController::premi/$1');
+$routes->delete('/assurance/delete/(:num)', 'CoverageController::hapus/$1');
+
 
 /*
  * --------------------------------------------------------------------
