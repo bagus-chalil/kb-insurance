@@ -7,7 +7,7 @@ use App\Models\Coverage;
 use DateTime;
 use Exception;
 
-class CoverageController extends ResourceController
+class AssuranceController extends ResourceController
 {
     protected $coverageModel;
 

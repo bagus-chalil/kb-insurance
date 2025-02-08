@@ -15,7 +15,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title><?= $this->renderSection('title') ?>| sneat - Bootstrap Dashboard PRO</title>
+    <title><?= $this->renderSection('title') ?>| KB Insurance</title>
 
     <meta name="description" content="" />
 
@@ -105,6 +105,9 @@
 
     <!-- Page JS -->
     <script src="<?= base_url('assets/js/dashboards-analytics.js') ?>"></script>
+    
+    <!-- CSRF Token -->
+    <script src="<?= base_url('assets/js/csrf.js') ?>"></script>
 
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

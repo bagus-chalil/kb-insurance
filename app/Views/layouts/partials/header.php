@@ -30,8 +30,8 @@
                     </div>
                     </div>
                     <div class="flex-grow-1">
-                    <h6 class="mb-0">John Doe</h6>
-                    <small class="text-muted">Admin</small>
+                    <h6 class="mb-0"><?= auth()->user()->username ?></h6>
+                    <small class="text-muted">User</small>
                     </div>
                 </div>
                 </a>
@@ -48,7 +48,7 @@
                 <div class="dropdown-divider my-1"></div>
             </li>
             <li>
-                <a class="dropdown-item" href="javascript:void(0);">
+                <a class="dropdown-item" href="<?= base_url('logout') ?>">
                 <i class="bx bx-power-off bx-md me-3"></i><span>Log Out</span>
                 </a>
             </li>

@@ -18,7 +18,7 @@ Printout Pertanggungan
         <!-- Tombol Print dan Back (Tidak Akan Tercetak) -->
         <div class="d-print-none d-flex justify-content-between mb-3">
             <button class="btn btn-primary" onclick="window.print()">Print</button>
-            <a href="/assurance" class="btn btn-secondary">Back</a>
+            <a href="/assurance/list" class="btn btn-secondary">Back</a>
         </div>
 
         <div class="card-body">

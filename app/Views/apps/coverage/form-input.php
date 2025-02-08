@@ -76,14 +76,13 @@ $(document).ready(function() {
         $(this).val(new Intl.NumberFormat('id-ID').format(value));
     });
 
-    // Simpan data (Validasi sebelum kirim)
+    // Simpan data
     $("#formPertanggungan").on("submit", function(e) {
         e.preventDefault();
 
         let formData = $(this).serializeArray();
         let hargaInput = formData.find(i => i.name === "harga_pertanggungan");
         
-        // Validasi harga (tidak boleh kosong atau kurang dari 100.000)
         let hargaAsli = hargaInput.value.replace(/\./g, '').replace(',', '.');
         if (!hargaAsli || parseFloat(hargaAsli) < 100000) {
             Swal.fire("Error!", "Harga pertanggungan minimal Rp. 100.000!", "error");
@@ -96,57 +95,16 @@ $(document).ready(function() {
             type: "POST",
             url: "/assurance/save",
             data: $.param(formData),
+            headers: {
+                "X-CSRF-TOKEN": csrfToken
+            },
             success: function(response) {
                 Swal.fire("Success!", "Data berhasil disimpan", "success");
-                loadRiwayat();
                 $("#formPertanggungan")[0].reset();
                 $("#id").val("");
+                getCsrfToken();
             }
         });
-    });
-
-    // Hapus data dengan konfirmasi SweetAlert
-    $(document).on("click", ".delete", function() {
-        let id = $(this).data("id");
-        Swal.fire({
-            title: "Yakin ingin menghapus?",
-            text: "Data akan hilang permanen!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Ya, Hapus!",
-            cancelButtonText: "Batal"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    type: "DELETE",
-                    url: "/assurance/delete/" + id,
-                    success: function() {
-                        Swal.fire("Deleted!", "Data berhasil dihapus.", "success");
-                        loadRiwayat();
-                    }
-                });
-            }
-        });
-    });
-
-    // Edit data (Mengisi semua form dengan data yang ada)
-    $(document).on("click", ".edit", function() {
-        $("#id").val($(this).data("id"));
-        $("input[name='nama']").val($(this).data("nama"));
-        $("input[name='periode_awal']").val($(this).data("periode_awal"));
-        $("input[name='periode_akhir']").val($(this).data("periode_akhir"));
-        $("input[name='pertanggungan']").val($(this).data("pertanggungan"));
-
-        // Harga harus tetap format Rupiah
-        let harga = new Intl.NumberFormat('id-ID').format($(this).data("harga"));
-        $("input[name='harga_pertanggungan']").val(harga);
-
-        // Set jenis pertanggungan sesuai data
-        $("select[name='jenis_pertanggungan']").val($(this).data("jenis"));
-        
-        // Set nilai checkbox
-        $("#banjir").prop("checked", $(this).data("banjir") === "TRUE");
-        $("#gempa").prop("checked", $(this).data("gempa") === "TRUE");
     });
 
 });
